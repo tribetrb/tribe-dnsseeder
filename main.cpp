@@ -400,14 +400,14 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dnsseed1.tribecrypto.net", "dnsseed2.tribecrypto.net", "dnsseed3.tribecrypto.net", ""};
-static const string testnet_seeds[] = {"dnsseed1.tribecrypto.net", ""};
+static const string mainnet_seeds[] = {"dnsseed3.tribecrypto.net", ""};
+static const string testnet_seeds[] = {"dnsseed3.tribecrypto.net", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
     //db.Add(CService("kjy2eqzk4zwi5zd3.onion", 9333), true);
-    db.Add(CService("144.202.75.241", 9399), true);
+    db.Add(CService("149.28.113.127", 9399), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
