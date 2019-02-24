@@ -400,14 +400,14 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dnsseed3.tribecrypto.net", ""};
+static const string mainnet_seeds[] = {"dnsseed2.tribecrypto.net", "dnsseed1.tribecrypto.net", "51.15.78.122", "195.123.211.197", "45.76.15.106", ""};
 static const string testnet_seeds[] = {"dnsseed3.tribecrypto.net", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
     //db.Add(CService("kjy2eqzk4zwi5zd3.onion", 9333), true);
-    db.Add(CService("149.28.113.127", 9399), true);
+    db.Add(CService("45.76.92.112", 9399), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
@@ -459,10 +459,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xce;
-      pchMessageStart[1] = 0xe2;
-      pchMessageStart[2] = 0xca;
-      pchMessageStart[3] = 0xff;
+      pchMessageStart[0] = 0xbf;
+      pchMessageStart[1] = 0x0c;
+      pchMessageStart[2] = 0x6b;
+      pchMessageStart[3] = 0xbd;
       seeds = testnet_seeds;
       fTestNet = true;
   }
